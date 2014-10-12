@@ -31,7 +31,7 @@ def count_unique_file(filename):
 											# (because there happen to be a lot of those in twain.txt)
 	word_list = f_string.lower().split()	# Make string all lowercase then split into list of words
 	for i, word in enumerate(word_list):	# Iterate over words in word_list	
-		for char in word:
+		for char in word:					# Iterate over char in word
 			if char in string.punctuation:	# Is that char a punctuation mark?
 				word = word.replace(char,"")	# If so, then remove it from the string
 				word_list[i] = word 			# Replace list item with cleaned up word
