@@ -117,8 +117,8 @@ Given a list of words, print the words in ascending order of length
 
 def word_length(words):
 	len_dict = {}	# Create empty dictionary	
-	for word in words:		# Iterate over word list
-		word = word.lower()	# Make each word lowercase
+	for i, word in enumerate(words):		# Iterate over word list
+		word = word.lower()				# Make each word lowercase
 		len_dict[word] = len(word)	# Then add word to dict with its length as the value
 
 	word_list = len_dict.keys()	# Pull the keys from dict and put into a list
@@ -156,28 +156,6 @@ word_length_file("twain.txt")
 	
 
 """
-Here's a table of English to Pirate translations
-English     Pirate
-
-sir         matey
-hotel       fleabag inn
-student     swabbie
-boy         matey
-madam       proud beauty
-professor   foul blaggart
-restaurant  galley
-your        yer
-excuse      arr
-students    swabbies
-are         be
-lawyer      foul blaggart
-the         th'
-restroom    head
-my          me
-hello       avast
-is          be
-man         matey
-
 Write a program that asks the user to type in a sentence and then
 print the sentence translated to pirate.
 """
