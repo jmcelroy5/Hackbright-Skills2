@@ -33,7 +33,7 @@ def count_unique_file(filename):
 	for i, word in enumerate(word_list):	# Iterate over words in word_list	
 		for char in word:
 			if char in string.punctuation:	# Is that char a punctuation mark?
-				word = word.replace(char,"")	# If so, then remove it and replace temp with new string
+				word = word.replace(char,"")	# If so, then remove it from the string
 				word_list[i] = word 			# Replace list item with cleaned up word
 
 	word_dict = {}												# Create an empty dictionary for word count
