@@ -52,9 +52,9 @@ return a list of all common items shared between both lists
 """
 
 def common_items(list1, list2):
-	set_list1 = set(list1)		# Turn both sets into a list
-	set_list2 = set(list2)		# which makes them easier to compare
-	common = set_list1 & set_list2	# Create a new set with only common items between set 1 and 2
+	set_list1 = set(list1)		# Turn both lists into sets
+	set_list2 = set(list2)		
+	common = set_list1 & set_list2	# Create new set of common items that are in both lists
 	common = list(common)			# Convert that set into a list
 	common.sort()			
 	return common
