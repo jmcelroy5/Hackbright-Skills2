@@ -27,18 +27,17 @@ Bonus: do the same for a file (i.e. twain.txt)
 def count_unique_file(filename):
 	f = open(filename)			# Open given file
 	f_string = f.read()			# Read the file into a string
-	f_string = f_string.replace("--"," ")	# Replace all double dashes with space 
-											# (because there happen to be a lot of those in twain.txt)
-	word_list = f_string.lower().split()	# Make string all lowercase then split into list of words
-	for i, word in enumerate(word_list):	# Iterate over words in word_list	
+	f_string = f_string.replace("--"," ")	# Replace all double dashes with space (because there happen to be a lot of those in twain.txt)
+	word_list = f_string.lower().split()				# Make string all lowercase then split into list of words
+	for i, word in enumerate(word_list):				# Iterate over words in word_list	
 		for char in word:					# Iterate over char in word
-			if char in string.punctuation:	# Is that char a punctuation mark?
-				word = word.replace(char,"")	# If so, then remove it from the string
+			if char in string.punctuation:			# Is that char a punctuation mark?
+				word = word.replace(char,"")		# If so, then remove it from the string
 				word_list[i] = word 			# Replace list item with cleaned up word
 
-	word_dict = {}												# Create an empty dictionary for word count
+	word_dict = {}							# Create an empty dictionary for word count
 
-	for word in word_list:										# Iterate over word list
+	for word in word_list:						# Iterate over word list
 		word_dict[word] = word_dict.setdefault(word, 0) + 1 	# Is there already a key for that word in word_dict? 
 																# If not, this will create key and set value at 0 + 1
 																# If so, setdefault will return current value then add 1
@@ -55,7 +54,7 @@ def common_items(list1, list2):
 	set_list1 = set(list1)		# Turn both lists into sets
 	set_list2 = set(list2)		
 	common = set_list1 & set_list2	# Create new set of common items that are in both lists
-	common = list(common)			# Convert that set into a list
+	common = list(common)		# Convert that set into a list
 	common.sort()			
 	return common
 
@@ -86,7 +85,7 @@ Given a list of numbers, return list of number pairs that sum to zero
 """
 
 def sum_zero(list1):
-	pairs = []						# Create an empty list to store pairs we find
+	pairs = []				# Create an empty list to store pairs we find
 	for i in range(len(list1)):		# Iterate over numbers in list
 		num = list1[i]
 		rest_of_list = list1[i+1:]	# Store rest of list (after i) 
@@ -117,11 +116,11 @@ Given a list of words, print the words in ascending order of length
 
 def word_length(words):
 	len_dict = {}	# Create empty dictionary	
-	for i, word in enumerate(words):		# Iterate over word list
-		word = word.lower()				# Make each word lowercase
+	for word in words:		# Iterate over word list
+		word = word.lower()	# Make each word lowercase
 		len_dict[word] = len(word)	# Then add word to dict with its length as the value
 
-	word_list = len_dict.keys()	# Pull the keys from dict and put into a list
+	word_list = len_dict.keys()						# Pull the keys from dict and put into a list
 	word_list = sorted(word_list, key = lambda word: len_dict[word])	# Look up each word length in dict then sort by that
 
 	for word in word_list:
@@ -136,7 +135,7 @@ Extra bonus: print the words in alphabetical order in ascending order of length
 
 def word_length_file(filename):
 	f = open(filename)	# Open the given file
-	text = f.read()	# Read the whole file into one long string
+	text = f.read()		# Read the whole file into one long string
 	text = text.replace("--"," ")	# Get rid of those pesky double dashes
 
 	word_list = text.lower().split()	# Convert to lowercase then split it into list of words
